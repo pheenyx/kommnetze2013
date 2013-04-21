@@ -1,8 +1,35 @@
 \section{Aufgabe 1:}
 Diskutieren Sie kurz folgende Eigenschaften für jede Topologie: Grad, Durchmesser, Bisektionsweite, Congestion.
 \subsection{Bus Topologie}
+In einem Bus sind die Stationen nur passiv abnehmer der Leitung.
+\begin{itemize}
+  \item Grad: 1
+  \newline Es gibt nur eine Kante auf denen die Knoten passiv draufsitzen. Daher ist der Grad 1  (Da bin ich mir ned sicher ob er überhaupt nen Grad hat ???).
+  \item Durchmesser: 1
+   \newline der Längste kürzeste Weg zwischen zwei Knoten ist 1, da die Nachricht einfach abgelesen werden kann und sie nicht durch andere Knoten hindurch muss da die Knoten nur passive Funktion haben.
+  \item Bisektionsweite: 1
+  \newline  Um das Netz mit $N$ Knoten in zwei Netze mit jeweils $\frac{N}{2}$ Knoten zu teilen, muss man 1 Kanten durchschneiden.
+  \item Congestion: 1
+  \newline Da der Bus nur aus einer Kante besteht ist die Congestion dem entsprechend 1.   
+\end{itemize}
+
 \subsection{Stern Topologie}
+
 \subsection{Baum Topologie}
+
+\subsection{Ring Topologie(eine Richtung)}
+ Jeweils zwei Teilnehmer sind über Einpunktverbindungen miteinander verbunden.
+\begin{itemize}
+  \item Grad: 1
+  \newline Eine Nachricht bewegt sich in einer Richtung von Knoten zu Knoten. Sie kann nur in eine Richtung gesendet werden. Daraus folgt der Graph ist ein gerichteter Graph. Da jeder Knoten nur einen direkten Nachbarn besitzt, ist der Grad 1.
+  \item Durchmesser: $N-1$ ($N =$ Anzahl der Knoten im Graphen.)
+   \newline der Längste kürzeste Weg zwischen zwei Knoten ist $N-1$, da die Nachricht im schlimmsten Fall einmal durch den ganzen Ring durchgeleitet werden muss.
+  \item Bisektionsweite: 2
+  \newline  Um das Netz mit $N$ Knoten in zwei Netze mit jeweils $\frac{N}{2}$ Knoten zu teilen, muss man 2 Kanten durchschneiden.
+  \item Congestion: 1
+  \newline Da sich die Nachrichten in einem Ring-Netzwerk in einer Richtung von Knoten zu Knoten bewegen.   
+\end{itemize}
+
 \subsection{Ring Topologie}
  Jeweils zwei Teilnehmer sind über Zweipunktverbindungen miteinander verbunden.
 \begin{itemize}
