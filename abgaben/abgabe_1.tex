@@ -1,6 +1,34 @@
 \section{Aufgabe 1:}
+Diskutieren Sie kurz folgende Eigenschaften für jede Topologie: Grad, Durchmesser, Bisektionsweite, Congestion.
+\subsection{Bus Topologie}
+\subsection{Stern Topologie}
+\subsection{Baum Topologie}
+\subsection{Ring Topologie}
+ jeweils zwei Teilnehmer sind über Zweipunktverbindungen miteinander verbunden.
+\begin{itemize}
+  \item Grad: 2
+  \newline Eine Nachricht bewegt sich in einer Richtung von Knoten zu Knoten. Sie kann entweder nach Rechts oder Links wandern. Daraus folgt der Graph ist ein ungerichteter Graph. Da jeder Knoten zwei Nachbarn besitzt, ist der Grad 2.
+  \item Durchmesser: N/2, N ist die Anzahl der Knoten im Graphen.
+   \newline der Längste kürzeste Weg zwischen zwei Knoten ist N/2, da die Nachricht entweder nach Links oder Rechts wandern kann.
+  \item Bisektionsweite: 2
+  \newline  Um das Netz mit N Knoten in zwei Netze mit jeweils N/2 Knoten zu teilen, muss man 2 Kanten durchschneiden.
+  \item Congestion: 1
+  \newline Da die  Nachrichten in einem Ring-Netzwerk  sich in einer Richtung von Knoten zu Knoten bewegen.   
+\end{itemize}
 
-
+\subsection{vollvermachtes Netz}
+Der Graph ist vollständig. Die Knoten sind über Punkt-zu-Punkt-Verbindungen miteinander verbunden.
+\begin{itemize}
+  \item Grad: N-1
+  \newline Der Graph ist vollständig. Jeder Knoten hat N-1 ausgehende Kanten.
+  \item Durchmesser:1
+   \newline Die Knoten sind über Punkt-zu-Punkt-verbindungen miteinander verbunden. Der längste kürzeste Weg  im Graphen hat Länge 1 Hop.
+  \item Bisektionsweite: 
+$ \frac{N}{2}^2$
+  \newline Man teilt der Graphen in 2 Netze mit jeweils $\frac{N}{2}$ Knoten. Da der Graph vollständig ist, hat jeder Knoten eines Netzes  $\frac{N}{2}$ ausgehende Kanten. d.h ein Netz hat $\frac{N}{2}$ * $\frac{N}{2}$ ausgehende Kanten. 
+  \item Congestion: N-1
+  \newline es gibt N-1 mögliche Wege um eine Nachricht zwischen zwei Knoten zu schicken.
+\end{itemize}
 \section{Aufgabe 2:}
 Berechnen Sie die Übertragungsdauer bei gegebener Übertragungsrate
 \begin{itemize}
