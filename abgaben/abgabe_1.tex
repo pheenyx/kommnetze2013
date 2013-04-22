@@ -2,38 +2,32 @@
 Diskutieren Sie kurz folgende Eigenschaften für jede Topologie: Grad,
 Durchmesser, Bisektionsweite, Congestion.
 \subsection{Bus Topologie}
-In einem Bus sind die Stationen nur passiv abnehmer der Leitung.
+In einem Bus sind die Stationen nur passiv Abnehmer der Leitung.
 \begin{itemize}
   \item Grad: $1$
-  \newline Es gibt nur eine Kante auf denen die Knoten passiv draufsitzen. Daher
-  ist der Grad $1$. Jeder Knoten hat nur Eine und zwar genau eine ausgehende
-  Kante.
+  \newline Es gibt nur eine Kante auf denen die Knoten passiv sitzen. Daher
+  ist der Grad $1$. Jeder Knoten hat nur genau eine ausgehende Kante.
   \item Durchmesser: $1$
    \newline Der längste kürzeste Weg zwischen zwei Knoten ist $1$, da die
    Nachricht einfach abgelesen werden kann und sie nicht durch andere Knoten
-   hindurch muss da die Knoten nur passive Funktion haben.
+   hindurch muss, da die Knoten nur passive Funktion haben.
   \item Bisektionsweite: $1$
   \newline  Um das Netz mit $N$ Knoten in zwei Netze mit jeweils $\frac{N}{2}$
   Knoten zu teilen, muss man $1$ Kanten durchschneiden.
   \item Congestion: $1$
-  \newline Da der Bus nur aus einer Kante besteht ist die Congestion dem
-  entsprechend $1$.
+  \newline Da der Bus nur aus einer Kante besteht ist die Congestion dem entsprechend $1$.
 \end{itemize}
 
 \subsection{Stern Topologie}
 Ein Sternnetz besitzt einen zentralen Knoten mit $N-1$ Nachbarknoten.
 
 \begin{itemize}
-  \item Grad: $1$ \newline Die Anzahle der ausgehenden Verbindungen aller
+  \item Grad: $1$ \newline Die Anzahl der ausgehenden Verbindungen aller
   Knoten, die nicht zentral sind, ist $1$.
   \item Durchmesser: $2$ \newline Jede Nachricht muss über den Zentralknoten und
-  kommt von da direkt zum Zielknoten. Daher sind zwei Hops für jede Nachricht
-  notwendig.
-  \item Bisektionsweite: $\frac{N}{2}$ \newline Um das Netz in zwei Sets an
-  Knoten zu trennen, müssen vom zentralen Knoten $\frac{N}{2}$ Knoten getrennt
-  werden.
-  \item Congestion: $1$ \newline Für jeden Nachricht gibt es maximal eine Weg
-  über den zentralen Knoten.
+  kommt von da direkt zum Zielknoten. Daher sind zwei Hops für jede Nachricht notwendig.
+  \item Bisektionsweite: $\frac{N}{2}$ \newline Um das Netz in zwei Sets von Knoten zu trennen, müssen vom zentralen Knoten $\frac{N}{2}$ Knoten getrennt werden.
+  \item Congestion: $1$ \newline Für jede Nachricht gibt es maximal einen Weg über den zentralen Knoten.
 \end{itemize}
 
 \subsection{Baum Topologie}
@@ -47,7 +41,7 @@ Ein Baum ist ein Verbundnetz aus beliebig vielen Stern- und Busnetzwerken.
    eingehenden (vom Vaterknoten) und einen ausgehenden (zum Kindknoten) Knoten
    haben, besteht aus einem Ast. Dieser hat $N-1$ Kanten.
   \item Bisektionsweite: 1
-  \newline Ein Baum lässt sich an der Wurzel in zwei Sets an Knoten trennen.
+  \newline Ein Baum lässt sich an der Wurzel in zwei Sets von Knoten trennen.
   Hierbei muss nur eine Kante getrennt werden.
   \item Congestion: 1
   \newline Da ein Baum per Definition zyklenfrei ist, kann es nur einen Weg
@@ -64,15 +58,14 @@ Ein Baum ist ein Verbundnetz aus beliebig vielen Stern- und Busnetzwerken.
   der Grad $1$.
   \item Durchmesser: $N-1$ ($N =$ Anzahl der Knoten im Graphen.)
    \newline Der längste kürzeste Weg zwischen zwei Knoten ist $N-1$, da die
-   Nachricht im schlimmsten Fall einmal durch den ganzen Ring durchgeleitet
-   werden muss.
+   Nachricht im schlimmsten Fall einmal durch den ganzen Ring durchgeleitet werden muss.
   \item Bisektionsweite: $2$
   \newline  Um das Netz mit $N$ Knoten in zwei Netze mit jeweils $\frac{N}{2}$
   Knoten zu teilen, muss man $2$ Kanten durchschneiden.
   \item Congestion: $1$
   \newline Da sich die Nachrichten in einem Ring-Netzwerk in einer Richtung von
-  Knoten zu Knoten bewegen.Eine Nachricht gilt erst dann als versendet, wenn
-  sie beim Sender wieder angekommen ist.
+  Knoten zu Knoten bewegen. Eine Nachricht gilt erst dann als versendet, wenn
+  sie wieder beim Sender angekommen ist.
 \end{itemize}
 
 \subsection{Ring Topologie(bidirektional)}
@@ -81,13 +74,12 @@ Ein Baum ist ein Verbundnetz aus beliebig vielen Stern- und Busnetzwerken.
 \begin{itemize}
   \item Grad: $2$
   \newline Eine Nachricht bewegt sich in einer Richtung von Knoten zu Knoten.
-  Sie kann entweder nach Rechts oder Links wandern. Daraus folgt der Graph ist
-  ein ungerichteter Graph. Da jeder Knoten zwei Nachbarn besitzt, ist der Grad 2.
+  Sie kann entweder nach rechts oder links wandern. Daraus folgt der Graph ist ein ungerichteter Graph. Da jeder Knoten zwei Nachbarn besitzt, ist der Grad 2.
   \item Durchmesser: $\frac{N}{2}$ ($N =$ Anzahl der Knoten im Graphen.)
    \newline Der längste kürzeste Weg zwischen zwei Knoten ist $\frac{N}{2}$, da
    die Nachricht entweder nach links oder rechts wandern kann.
   \item Bisektionsweite: $2$
-  \newline  Um das Netz mit $N$ Knoten in zwei Netze mit jeweils $\frac{N}{2}$
+  \newline  Um das Netz aus $N$ Knoten in zwei Netze zu jeweils $\frac{N}{2}$
   Knoten zu teilen, muss man $2$ Kanten durchschneiden.
   \item Congestion: $1$
   \newline Da sich die Nachrichten in einem Ring-Netzwerk in einer Richtung von
@@ -102,8 +94,8 @@ miteinander verbunden.
   \item Grad: $N-1$
   \newline Der Graph ist vollständig. Jeder Knoten hat $N-1$ ausgehende Kanten.
   \item Durchmesser: $1$
-   \newline Die Knoten sind über Punkt-zu-Punkt-verbindungen miteinander
-   verbunden. Der längste kürzeste Weg  im Graphen hat Länge $1$ Hop.
+   \newline Die Knoten sind über Punkt-zu-Punkt-Verbindungen miteinander
+   verbunden. Der längste kürzeste Weg im Graphen hat Länge $1$ Hop.
   \item Bisektionsweite: $ \left( \frac{N}{2}\right)^2$
   \newline Man teilt den Graphen in $2$ Netze mit jeweils $\frac{N}{2}$ Knoten.
   Da der Graph vollständig ist, hat jeder Knoten eines Netzes  $\frac{N}{2}$
