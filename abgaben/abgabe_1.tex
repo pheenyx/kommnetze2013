@@ -54,7 +54,7 @@ Ein Baum ist ein Verbundnetz aus beliebig vielen Stern- und Busnetzwerken.
   zwischen zwei Knoten geben, daher ist die Congestion $1$.
 \end{itemize}
 
-\subsection{Ring Topologie(eine Richtung)}
+\subsection{Ring Topologie(unidirektional)}
  Jeweils zwei Teilnehmer sind über Einpunktverbindungen miteinander verbunden.
 \begin{itemize}
   \item Grad: $1$
@@ -71,10 +71,11 @@ Ein Baum ist ein Verbundnetz aus beliebig vielen Stern- und Busnetzwerken.
   Knoten zu teilen, muss man $2$ Kanten durchschneiden.
   \item Congestion: $1$
   \newline Da sich die Nachrichten in einem Ring-Netzwerk in einer Richtung von
-  Knoten zu Knoten bewegen.
+  Knoten zu Knoten bewegen.Eine Nachricht gilt erst dann als versendet, wenn
+  sie beim Sender wieder angekommen ist.
 \end{itemize}
 
-\subsection{Ring Topologie}
+\subsection{Ring Topologie(bidirektional)}
  Jeweils zwei Teilnehmer sind über Zweipunktverbindungen miteinander verbunden.
  Es handelt sich hierbei im einen bidirektionalen Ring.
 \begin{itemize}
@@ -90,7 +91,8 @@ Ein Baum ist ein Verbundnetz aus beliebig vielen Stern- und Busnetzwerken.
   Knoten zu teilen, muss man $2$ Kanten durchschneiden.
   \item Congestion: $1$
   \newline Da sich die Nachrichten in einem Ring-Netzwerk in einer Richtung von
-  Knoten zu Knoten bewegen.
+  Knoten zu Knoten bewegen. Eine Nachricht gilt erst dann als versendet, wenn
+  sie über beide Richtungen beim Sender wieder angekommen ist.
 \end{itemize}
 
 \subsection{Vollvermaschtes Netz}
