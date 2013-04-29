@@ -2,14 +2,15 @@
 	\begin{itemize}
 		\item Berechnen Sie die maximale Übertragungsrate für ein typisches Telefonsystem nach Shannon. Der Rauschabstand beträgt 30 dB, die Bandbreite beträgt 3kHz.
 	\end{itemize}
-	$10 \cdot log_{10}(1000)=30 dB$
-	\\Maximale Anzahl von $\frac{Bits}{s} =3000\text{Hz} \cdot log_{2}(1+1000)  \approx 29902 \frac{Bits}{s}$
+	$10 \cdot log_{10}(\frac{S}{N})=30 dB$
+	\\ $\Rightarrow \frac{S}{N} = 1000$
+	\\Maximale Anzahl von $\frac{Bits}{s} =3000\text{Hz} \cdot log_{2}(1+\underbrace{\frac{S}{N}}_\text{1000})  \approx 29902 \frac{Bits}{s}$
 
 
 \section{Aufgabe 2: Leitungscodes: Scrambling}
 	\begin{itemize}
 		\item Für das Senden der Bitfolge „$1000.0100$“ verwendet der Sender NRZ als Leitungscode. Wegen der Ungleichverteilung der Bits „$1$“ und „$0$“, ergibt sich eine nicht gleichspannungsfreie Signalfolge.
 		Wandeln Sie daher die gegebene Bitfolge mittels „Scambling“ in eine gleichspannungsfreie Signalfolge um(siehe dazu Folie 24).
-		Die Pseudozufallsfolge erzeugen Sie mit $x_{i+1} := (a \cdot x_i+ b) mod 2$, wobei $x_0$ der Startwert ist und $a$ und $b$ zwei selbstdefinierte Konstanten sind. 
+		Die Pseudozufallsfolge erzeugen Sie mit $x_{i}+1 := (a \cdot x_i+ b) mod 2$, wobei $x_0$ der Startwert ist und $a$ und $b$ zwei selbstdefinierte Konstanten sind. 
 		Achten Sie darauf, dass die zu übertragene Signalfolge wirklich gleichspannungsfrei ist
 	\end{itemize}
