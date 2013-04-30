@@ -16,3 +16,29 @@
 		Wandeln Sie daher die gegebene Bitfolge mittels „Scambling“ in eine gleichspannungsfreie Signalfolge um (siehe dazu Folie 24).\\
 		Die Pseudozufallsfolge erzeugen Sie mit $x_{i+1} := (a \cdot x_i+ b) \mod 2$, wobei $x_0$ der Startwert ist und $a$ und $b$ zwei selbst definierte Konstanten sind. \\
 		Achten Sie darauf, dass die zu übertragene Signalfolge wirklich gleichspannungsfrei ist.
+
+\paragraph{Antwort:}
+
+Originalfolge:
+$f_o =1000.0100$
+
+Pseudozufallsfolge:
+$f_p = 1010.1010$
+
+Resultierende Folge:
+$f_r = f_o \oplus f_p = 0010.1110$
+
+Folge:
+\begin{eqnarray*}        
+\text{Startwert }0:&&\\
+a &=& 1\\
+b &=& 1\\
+x0 &=& 1\\
+x1 &=& 0\\
+x2 &=& 1\\
+x3 &=& 0\\
+x4 &=& 1\\
+x5 &=& 0\\
+x6 &=& 1\\
+x7 &=& 0\\
+\end{eqnarray*}
