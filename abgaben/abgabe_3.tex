@@ -11,34 +11,79 @@
 	Diskutieren und vergleichen (Tip: Rauschen) Sie kurz die Eigenschaften der beiden Leitungscodes.
 \paragraph{Antwort:}
 \section{2. Codemultiplex}
+Gegeben seien die Walsh-Hadamard-Sequenzen der Länge 8 aus dem Skript.\\
+Zu senden sind an den Empfänger 7 die Bitfolge $110$ und an den Empfänger 3 die Bitfolge $101$.
 \paragraph{Aufgabe 1.1:}
 	Berechnen Sie die zu sendenden Sendefolgen.
 \paragraph{Antwort:} Die zu sendende Bitfolge ergibt sich aus der Addition beider Bitfolgen
 	\begin{enumerate}
 
 	\item Die Bitfolge für Empfänger $3$
-		\\ 1: $-1\mid -1\mid +1\mid +1\mid -1\mid -1\mid +1\mid +1$
-		\\ 0: $+1\mid +1\mid -1\mid -1\mid +1\mid +1\mid -1\mid -1$
-		\\ 1: $-1\mid -1\mid +1\mid +1\mid -1\mid -1\mid +1\mid +1$
-	\item Die Bitfolge für Empfänger $7$	
-		\\ 1: $-1\mid -1\mid +1\mid +1\mid +1\mid +1\mid -1\mid -1$
-		\\ 1: $-1\mid -1\mid +1\mid +1\mid +1\mid +1\mid -1\mid -1$
-		\\ 0: $+1\mid +1\mid -1\mid -1\mid -1\mid -1\mid +1\mid +1$
+	
+		\begin{tabular}{|c||c|c|c|c|c|c|c|c|}
+		\hline 1: & -1 & -1 & +1 & +1 & -1 & -1 & +1 & +1 \\ 
+		\hline 0: & +1 & +1 & -1 & -1 & +1 & +1 & -1 & -1 \\ 
+		\hline 1: & -1 & -1 & +1 & +1 & -1 & -1 & +1 & +1 \\ 
+		\hline 
+		\end{tabular} 
+	
+	\item Die Bitfolge für Empfänger $7$
+		
+		\begin{tabular}{|c||c|c|c|c|c|c|c|c|}
+		\hline 1: & -1 & -1 & +1 & +1 & +1 & +1 & -1 & -1 \\ 
+		\hline 1: & -1 & -1 & +1 & +1 & +1 & +1 & -1 & -1 \\ 
+		\hline 0: & +1 & +1 & -1 & -1 & -1 & -1 & +1 & +1 \\ 
+		\hline 
+		\end{tabular} 
+		
 	\item Die Addierte Bitfolge ist demnach
-		\\$-1-1\mid -1-1\mid +1+1\mid +1+1\mid -1+1\mid -1+1\mid +1-1\mid +1-1 = -2\mid -2\mid +2\mid +2\mid 0\mid 0\mid 0\mid 0$
-		\\$+1-1\mid +1-1\mid -1+1\mid -1+1\mid +1+1\mid +1+1\mid -1-1\mid -1-1 = 0\mid 0\mid 0\mid 0\mid +2\mid +2\mid -2\mid -2$
-		\\$-1-1\mid -1-1\mid +1+1\mid +1+1\mid -1+1\mid -1+1\mid +1-1\mid +1-1 = -2\mid -2\mid +2\mid +2\mid 0\mid 0\mid 0\mid 0$
+	
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline -1-1 & -1-1 & +1+1 & +1+1 & -1+1 & -1+1 & +1-1 & +1-1 \\
+		$\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ \\
+		-2 & -2 & +2 & +2 & 0 & 0 & 0 & 0 \\ 
+		\hline +1-1 & +1-1 & -1+1 & -1+1 & +1+1 & +1+1 & -1-1 & -1-1 \\
+		$\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ \\
+		0 & 0 & 0 & 0 & +2 & +2 & -2 & -2 \\ 
+		\hline -1+1 & -1+1 & +1-1 & +1-1 & -1-1 & -1-1 & +1+1 & +1+1 \\ 
+		$\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ & $\Downarrow$ \\
+		0 & 0 & 0 & 0 & -2 & -2 & 2 & 2 \\
+		\hline 
+		\end{tabular} 
+	
 	\end{enumerate}
 \paragraph{Aufgabe 1.2:}
 	Berechnen Sie aus den empfangenen Sendefolgen die ursprüngliche Bitfolge.
-\paragraph{Antwort:} Um die gesendeten Sendefolgen zu entschlüsseln müssen wir jetzt einfach das Skalarprodukt bilden.
+\paragraph{Antwort:} Um die gesendeten Sendefolgen zu entschlüsseln müssen wir jetzt einfach das Skalarprodukt aus empfangener Folge und eigenem Schlüssel bilden.
 	\begin{enumerate}
-		\item Empfänger $4$
-			\\$(-2\cdot 1)+(-2\cdot 1)+(2\cdot -1)+(2\cdot -1)+(0\cdot 1)+(0\cdot 1)+(0\cdot -1)+(0\cdot -1) = -8 \Rightarrow \text{gesendetes Bit: } 1$
-			\\$(0\cdot 1)+(0\cdot 1)+(0\cdot -1)+(0\cdot -1)+(2\cdot 1)+(2\cdot 1)+(-2\cdot -1)+(-2\cdot -1) = 8 \Rightarrow \text{gesendetes Bit: } 0$
-			\\$(-2\cdot 1)+(-2\cdot 1)+(2\cdot -1)+(2\cdot -1)+(0\cdot 1)+(0\cdot 1)+(0\cdot -1)+(0\cdot -1) = -8 \Rightarrow \text{gesendetes Bit: } 1$
+		\item Empfänger $3$
+		
+			\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+			\hline empfangene Folge & -2 & -2 & 2 & 2 & 0 & 0 & 0 & 0 &  \\ 
+			$\times$ eigener Schlüssel & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 &  \\ 
+			= & -2 & -2 & -2 & -2 & 0 & 0 & 0 & 0 & $\sum = -8 \Rightarrow \text{gesendetes Bit: 1}$ \\ 
+			\hline empfangene Folge & 0 & 0 & 0 & 0 & 2 & 2 & -2 & -2 &  \\ 
+			$\times$ eigener Schlüssel & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 &  \\ 
+			= & 0 & 0 & 0 & 0 & 2 & 2 & 2 & 2 & $\sum = 8 \Rightarrow \text{gesendetes Bit: 0}$ \\ 
+			\hline empfangene Folge & 0 & 0 & 0 & 0 & -2 & -2 & 2 & 2 &  \\ 
+			$\times$ eigener Schlüssel & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 &  \\ 
+			= & 0 & 0 & 0 & 0 & -2 & -2 & -2 & -2 & $\sum = -8 \Rightarrow \text{gesendetes Bit: 1}$ \\ 
+			\hline 
+			\end{tabular} 
+		
 		\item Empfänger $7$	
-			\\$(-2\cdot 1)+(-2\cdot 1)+(2\cdot -1)+(2\cdot -1)+(0\cdot -1)+(0\cdot -1)+(0\cdot 1)+(0\cdot 1) = -8 \Rightarrow \text{gesendetes Bit: } 1$
-			\\$(0\cdot 1)+(0\cdot 1)+(0\cdot -1)+(0\cdot -1)+(2\cdot -1)+(2\cdot -1)+(-2\cdot 1)+(-2\cdot 1) = -8 \Rightarrow \text{gesendetes Bit: } 1$
-			\\$(-2\cdot 1)+(-2\cdot 1)+(2\cdot -1)+(2\cdot -1)+(0\cdot 1)+(0\cdot 1)+(0\cdot -1)+(0\cdot -1) = 8 \Rightarrow \text{gesendetes Bit: } 0$
+		
+			\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+			\hline empfangene Folge & -2 & -2 & 2 & 2 & 0 & 0 & 0 & 0 &  \\ 
+			$\times$ eigener Schlüssel & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 &  \\ 
+			= & -2 & -2 & -2 & -2 & 0 & 0 & 0 & 0 & $\sum = -8 \Rightarrow \text{gesendetes Bit: 1}$ \\ 
+			\hline empfangene Folge & 0 & 0 & 0 & 0 & 2 & 2 & -2 & -2 &  \\ 
+			$\times$ eigener Schlüssel & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 &  \\ 
+			= & 0 & 0 & 0 & 0 & -2 & -2 & -2 & -2 & $\sum = -8 \Rightarrow \text{gesendetes Bit: 1}$ \\ 
+			\hline empfangene Folge & 0 & 0 & 0 & 0 & -2 & -2 & 2 & 2 &  \\
+			$\times$ eigener Schlüssel & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 &  \\ 
+			= & 0 & 0 & 0 & 0 & 2 & 2 & 2 & 2 & $\sum = 8 \Rightarrow \text{gesendetes Bit: 0}$ \\ 
+			\hline 
+			\end{tabular} 
+		
 	\end{enumerate}
