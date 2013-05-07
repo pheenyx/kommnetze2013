@@ -10,6 +10,23 @@
 \paragraph{Aufgabe 1.3:}
 	Diskutieren und vergleichen (Tip: Rauschen) Sie kurz die Eigenschaften der beiden Leitungscodes.
 \paragraph{Antwort:}
+    Der differentielle Manchestercode hat im Vergleich zum Normalen das Problem,
+    dass ein Rauschen zum Bitanfang falsche Symbole einstreuen kann. Da beim
+    normalen Manchestercode eine Flanke wichtig ist, die an mehreren Stellen
+    während des Bits abgetastet und damit in überprüft werden kann, würde ein
+    eingestreuter Polaritätswechsel am Anfang  ein falsches Bit darstellen und
+    die Synchronisation durcheinanderbringen, wenn der Wechsel lange genug
+    anhält um einen Flankenwechsel in der Bitmitte zu erzeugen.
+    
+    Der Aufbau des Differentiellen lässt sich leichter logisch trennen, da der
+    Flankenwechsel in der Bitmitte garantiert ist und nichts mit dem zu
+    übertragenden Bit zu tun hat. Daher kann man eine Einheit des Empfängers auf
+    den Flankenwechsel achten lassen und damit den Takt regenerieren lassen und
+    eine andere Einheit auf das zu übertragende Bit. Außerdem ist die
+    Taktrückgewinnung und der Bitempfang zeitlich voneinander getrennt. Der
+    normale Manchestercode ist hierbei verzahnter, da ein Polaritätwechsel zu 
+    Anfang nur im Falle mehrere gleicher Bits passiert.
+
 \section{2. Codemultiplex}
 Gegeben seien die Walsh-Hadamard-Sequenzen der Länge 8 aus dem Skript.\\
 Zu senden sind an den Empfänger 7 die Bitfolge $110$ und an den Empfänger 3 die Bitfolge $101$.
