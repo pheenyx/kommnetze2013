@@ -1,0 +1,51 @@
+\section{Aufgabe 1}
+
+Beim CSMA/CD horcht eine sendewillige Station das Medium ab, bevor sie anfängt
+zu senden. Ist das Medium noch belegt, wird die Station warten bis es frei wird.
+
+Sollte das MEdium frei sein, entscheidet die X-persistent Strategie, ob die
+Station sofort anfängt zu senden oder nicht.
+
+Bei einer 1-persistent Strategie fängt die Station mit einer Wahrscheinlichkeit
+von $1$ an zu senden. Bei einer p-persistent Strategie nur mit einer
+Wahrscheinlichkeit von $p$. Ansonsten wartet sie einen Slot. Eine non-persitent
+Strategie wartet eine zufällige Zeit ab, um zu senden.
+
+Wenn beim Senden eine Kollision auftritt können das alle an das Medium
+angeschlossene Stationen erkennen, da der Spannungspegel des Signals durch
+positive Überlagerung über einen Grenzwert tritt. Die Station, die das erkennt
+sendet ihrerseits ein JAM-Signal. Dieses Signal verhindert, dass eine Station
+das Packet akzeptiert, da es sicher die CRC des Packetes ungültig macht.
+
+Damit die ausgehend sendende Station erkennt, dass das Packet nicht richtig
+gesendet wurde, muss das JAM-Signal den Sender erreichen, bevor der Frame zuende
+gesendet wurde.
+
+
+\section{Aufgabe 2}
+
+Ein Token-Ring ist ein System aus zu einem Ring zusammengeschlossen Rechner. Das
+Netz wird aus Verbindungen zwischen jeweils zwei Rechnern aufgebaut. Damit
+existiert kein Broadcastmedium im eigentlichen Sinne.
+
+Damit eine Station senden kann, benötigt sie das sog. Token. Ein Token ist eine
+Nachricht, die das sendewillige System vom Ring "nehmen" kann, wenn die
+Prioritäten richtig gesetzt sind. Vom Ring nehmen bedeutet hierbei, dass die
+Station das Token nicht weiter sendet. 
+
+Hat eine Station das Token, kann sie Nachrichten senden. Hierbei wird eine
+Nachricht in eine Richtung auf den Ring gesetzt und von jeder folgenden Station
+weiter gesendet. Die Zielstation nimmt die Nachricht an und verarbeitet sie,
+sendet sie allerdings auch weiter. Erst die sendende Station nimmt die Nachricht
+wieder vom Ring. Damit ist gewährleistet, dass die Nachricht von alle möglichen
+Empfänger gelesen werden kann. Des weiteren kann damit überprüft werden, ob der
+Ring noch korrekt funktioniert.
+
+Nachdem eine oder mehrere Nachrichten gesendet wurden, setzt die sendende
+Station ihrerseits ein neues Token auf den Ring, dass von der nächsten Station
+mit ausreichender Priortät genommen wird.
+
+Eine Station des Rings übernimmt die Aufgabe als aktiver Monitor. Dieser nimmt
+endlos zirkulierende Rahmen oder Token mit zu hoher Priorität vom Ring und
+erstetzt verloren gegangene oder geglaubte Token. Desweiteren schützt er davor,
+dass mehrere Monitore gleichzeitig versuchen diese Aufgabe zu übernehmen.
