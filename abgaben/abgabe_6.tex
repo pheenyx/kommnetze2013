@@ -15,11 +15,20 @@ Es handelt sich um 100 MBit Ethernet.
     30,72 \mu s = 6 \text{ Slots}
 \]
 \[  
-    log_2(6) = 2,\ldots \Rightarrow 3 \text{ Versuche}
+    log_2(6) = 2,\ldots \Rightarrow 3 \text{ Fehlversuche}
 \]
 
 
 \section{Aufgabe 2}
+
+\[
+    \text{Pro Frame: } 46-1500 \text{ Byte bei } 72 - 1526 \text{ Byte
+    Packetgröße} \Rightarrow 64\% - 98\% \text{ des Packetes}
+\]
+\[
+    \text{Rohe Übertragungsleistung: } 100\text{Mbps} \Rightarrow
+    64-98\text{Mbps Datentransfer} = 8-12,25\text{MB}/s
+\]
 
 \section{Aufgabe 3}
 
@@ -27,7 +36,7 @@ Es handelt sich um 100 MBit Ethernet.
 \begin{enumerate}
 \item Hoher Mehraufwand für die Adressierung während der Datenübertragung
 \item evtl. niedrige Qualität des ankommenden Paketstroms:  Neusortierung oder Fehlerüberwachung in den höheren Schichten nötig
-\item ??
+\item Keine garantierten Bandbreiten
 \end{enumerate}
 
 \paragraph{Nachteile Virtuelle Verbindung:}
