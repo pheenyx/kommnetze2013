@@ -11,6 +11,8 @@ IP-Adresse & Basisadresse & Netzwerkmaske & Broadcastadresse \\\hline\hline
 
 \section{Aufgabe 2: CIDR}
 
+\begin{multicols}{2}
+
 \subsection{2.1}
 
 Erste Adresse: $71.94.0.0/255.254.0.0$
@@ -38,3 +40,23 @@ $6$ & $71.95.232.0/21$ & $71.95.239.255/21$ \\\hline
 $7$ & $71.95.240.0/21$ & $71.95.247.255/21$ \\\hline
 $8$ & $71.95.248.0/21$ & $71.95.255.255/21$ \\\hline
 \end{tabular}
+
+\subsection{2.3}
+\end{multicols}
+\begin{landscape}
+\Tree [.{\fbox{71.}}
+    [.{\fbox{71.94.0.0/16}} {Kunde 1} ]
+    [.{\fbox{71.95.}}
+        [.{\fbox{71.95.0.0/18}} {Kunde 2} ]
+        [.{\fbox{71.95.64.0/18}} {Kunde 3} ]
+        [.{\fbox{71.95.128.9/18}} {Kunde 4} ]
+        [.{\fbox{71.95.192.}}
+            [.{\fbox{71.95.192.0/21}} {Kunde 5} ]
+            [.{\fbox{71.95.200.0/21}} {Kunde 6} ]
+            [.{\fbox{71.95.208.0/21}} {Kunde 7} ]
+            [.{\fbox{71.95.216.0/21}} {Kunde 8} ]
+            [.{\fbox{71.95.224.0/21}} {Kunde 9} ]
+        ]
+    ]
+]
+\end{landscape}
