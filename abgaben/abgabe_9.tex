@@ -3,17 +3,17 @@
 \begin{tabular}{|l|l|l|l|}\hline
 IP-Adresse & Basisadresse & Netzwerkmaske & Broadcastadresse \\\hline\hline
 211.99.155.185 & 211.99.154.0 & 255.255.254.0 & 211.99.155.255 \\\hline
-67.147.172.48 & 67.144.0.0 & 255.240.0.0 & 67.159.255.255 \\\hline
+67.147.172.48 & 67.144.0.0 & 255.252.0.0 & 67.147.255.255 \\\hline
 134.95.93.207 & 134.95.0.0 & 255.255.128.0 & 134.95.127.255 \\\hline
 194.83.72.117 & 194.83.72.112 & 255.255.255.240 & 194.83.72.127 \\\hline
-30.225.167.176 & 28.0.0.0 & 223.0.0.0 & 31.255.255.255 \\\hline
+30.225.167.176 & 28.0.0.0 & 252.0.0.0 & 31.255.255.255 \\\hline
 \end{tabular}
 
 \section{Aufgabe 2: CIDR}
 
 \begin{multicols}{2}
 
-\subsection{2.1}
+\subsection{2.1 Die ersten Kunden}
 
 Erste Adresse: $71.94.0.0/255.254.0.0$
 
@@ -27,8 +27,10 @@ $3$ & $71.95.64.0/18$ & $71.95.127.255/18$ \\\hline
 $4$ & $71.95.128.0/18$ & $71.95.191.255/18$ \\\hline
 \end{tabular}
 
-\subsection{2.2}
+\vspace{4cm}
 
+\subsection{2.2 weitere Kunden}
+Die verbleibenden 16384 Adressen werden in /21er Netze zu je 2048 IPs geteilt. Damit könnte man 8 Kunden versorgen, wir brauchen aber nur 5 davon. Ein /20er Netz wäre aber zu groß, da $4096 \cdot 5 > 16384$\\[5mm]
 \begin{tabular}{|l|r|r|}\hline
 Kunde & Start-IP & End-IP \\\hline\hline
 $1$ & $71.95.192.0/21$ & $71.95.199.255/21$ \\\hline
@@ -41,9 +43,11 @@ $7$ & $71.95.240.0/21$ & $71.95.247.255/21$ \\\hline
 $8$ & $71.95.248.0/21$ & $71.95.255.255/21$ \\\hline
 \end{tabular}
 
-\subsection{2.3}
+
+
 \end{multicols}
 \begin{landscape}
+\subsection{2.3 Patricia Tree}
 \Tree [.{\fbox{71.}}
     [.{\fbox{71.94.0.0/16}} {Kunde 1} ]
     [.{\fbox{71.95.}}
