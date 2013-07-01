@@ -1,0 +1,46 @@
+\section{Aufgabe 1}
+
+\begin{tabular}{|l|l|l|l|l|}\hline
+Adresse hex. & Feld & Wert hex. & Wert dez. & Bedeutung \\\hline\hline
+00-05 & DestMAC & 00 17 95 9A 55 67 & nicht sinnvoll & OUI \\\hline
+06-0B & SourceMAC & 00 60 97 D8 EE 48 & nicht sinnvoll & OUI 3COM \\\hline
+0C-0D & Length/Type & 08 00 & 2048 & InternetIP \\\hline\hline
+0E & Version & 45 & 69 & \\\hline
+0E & IPHeaderLength & 45 & 69 &  \\\hline
+0F & TypeOfService & 00 & 0 & \\\hline
+10-11 & TotalLength & 00 30 & 48 & \\\hline
+12-13 & Identification & 3A B2 & 15026 & \\\hline
+14 & Fragments & 40 & 64 & \\\hline
+14-15 & FragmentOffset & 40 00 & 16384 & \\\hline
+16 & TimeToLive & 80 & 128 & max. 128 Hops \\\hline
+17 & Protocol & 06 & 6 & TCP \\\hline
+18-19 & HeaderChecksum & 4D E7 & 19943 & \\\hline
+1A-1D & SourceIPAddress & 86 5D XX XX & 134.93.x.x & Rechner an der Uni MZ \\\hline
+1e-21 & DestIPAddress & 86 5D XX XX & 134.93.x.x & Rechner an der Uni MZ \\\hline\hline
+22-23 & IPData/SrcPort & 04 16 & 1046 & \\\hline
+24-25 & DestPort & 00 16 & 22 & Standard-SSH-Port \\\hline
+26-29 & SequenceNumber & 37 8E 51 7B & 932073851 & \\\hline
+2A-2D & AckNumber & 00 00 00 00 & 0 & Erstes Packet im Handshake \\\hline
+2E & TCPHeaderLength & 70 & 112 & \\\hline
+2F & Flags & 02 & nicht sinnvoll & SYN-Flag \\\hline
+30-31 & WindowSize & 40 00 & 16384 & \\\hline
+32-33 & Checksum & 43 BB & 17339 & \\\hline
+34-35 & UrgentPointer & 00 00 & 0 & \\\hline
+36 & Options/OptionKind & 02 & 2 & MaxSegmentSize \\\hline
+37 & OptionLength & 04 & 4 & Bytes \\\hline
+38-39 & MaxSegmentSize & 05 B4 & 1460 & Octets \\\hline
+3A-3B & OptionKind & 01 01 & 1 & NoOperation \\\hline
+3C & OptionKind & 04 & 4 & SACKPermitted \\\hline
+3D & OptionLength & 02 & 2 & \\\hline
+\end{tabular}
+
+\section{Aufgabe 2}
+Es handelt sich um ein fragmentiertes Packet, da im Headerfeld $14$ die Anzahl
+der Fragmente mit $64$ angegeben wird.
+
+\section{Aufgabe 3}
+Das Segment dient dazu einen Handshake mit einem SSH-Server an der Uni Mainz
+aufzubauen. Es handelt sich aufgrund des SYN-Flags und der nicht vorhandenen
+ACK-Sequence um das erste Packet im Handshake und in dieser Verbindung. Die
+Verbindung wird auch von einem Rechner der Uni Mainz aufgebaut, möglicherweise
+sogar derselbe.
