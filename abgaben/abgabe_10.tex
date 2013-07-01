@@ -5,13 +5,13 @@ Adresse hex. & Feld & Wert hex. & Wert dez. & Bedeutung \\\hline\hline
 00-05 & DestMAC & 00 17 95 9A 55 67 & nicht sinnvoll & OUI \\\hline
 06-0B & SourceMAC & 00 60 97 D8 EE 48 & nicht sinnvoll & OUI 3COM \\\hline
 0C-0D & Length/Type & 08 00 & 2048 & InternetIP \\\hline\hline
-0E & Version & 45 & 69 & \\\hline
-0E & IPHeaderLength & 45 & 69 &  \\\hline
+0E.1 & Version & 4 & 4 & IPv4 \\\hline
+0E.2 & IPHeaderLength & 5 & 5 & 5 byte Headerlänge \\\hline
 0F & TypeOfService & 00 & 0 & \\\hline
 10-11 & TotalLength & 00 30 & 48 & \\\hline
 12-13 & Identification & 3A B2 & 15026 & \\\hline
-14 & Fragments & 40 & 64 & \\\hline
-14-15 & FragmentOffset & 40 00 & 16384 & \\\hline
+14.1 & Fragments & 4 & 4 & 4 Fragmente \\\hline
+14.2-15 & FragmentOffset & 0 00 & 0 & kein Offset = erstes Fragment\\\hline
 16 & TimeToLive & 80 & 128 & max. 128 Hops \\\hline
 17 & Protocol & 06 & 6 & TCP \\\hline
 18-19 & HeaderChecksum & 4D E7 & 19943 & \\\hline
@@ -35,12 +35,7 @@ Adresse hex. & Feld & Wert hex. & Wert dez. & Bedeutung \\\hline\hline
 \end{tabular}
 
 \section{Aufgabe 2}
-Es handelt sich um ein fragmentiertes Packet, da im Headerfeld $14$ die Anzahl
-der Fragmente mit $64$ angegeben wird.
+Es handelt sich um ein fragmentiertes Packet, da im Headerfeld $14$ die Anzahl der Fragmente mit $4$ angegeben wird.
 
 \section{Aufgabe 3}
-Das Segment dient dazu einen Handshake mit einem SSH-Server an der Uni Mainz
-aufzubauen. Es handelt sich aufgrund des SYN-Flags und der nicht vorhandenen
-ACK-Sequence um das erste Packet im Handshake und in dieser Verbindung. Die
-Verbindung wird auch von einem Rechner der Uni Mainz aufgebaut, möglicherweise
-sogar derselbe.
+Das Segment dient dazu einen Handshake mit einem SSH-Server an der Uni Mainz aufzubauen. Es handelt sich aufgrund des SYN-Flags und der nicht vorhandenen ACK-Sequence um das erste Packet im Handshake und in dieser Verbindung. Die Verbindung wird auch von einem Rechner der Uni Mainz aufgebaut, möglicherweise sogar derselbe.
